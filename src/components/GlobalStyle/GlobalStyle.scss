@@ -5,6 +5,7 @@
 :root {
     --primary: #fe2c55;
     --black: #000;
+    --white: #ffffff;
     --text-color: #333;
 
     // Default layout
@@ -37,7 +38,7 @@ input,
     outline: none;
 }
 
-a {
+a[href] {
     text-decoration: none;
     color: var(--text-color);
 }

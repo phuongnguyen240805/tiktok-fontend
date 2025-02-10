@@ -1,4 +1,4 @@
-import { SubLayout } from "~/components/Layout"
+import { SubLayout } from "~/components/Layouts"
 import { HomePage, FollowingPage, ProfilePage, SearchPage, UploadPage } from "~/page"
 
 // public routes

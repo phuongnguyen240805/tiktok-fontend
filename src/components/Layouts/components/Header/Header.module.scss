@@ -54,7 +54,7 @@
 
     input:not(:placeholder-shown)~.search-btn {
         // khi mất placeholder thì color .search-btn
-        color: var(--search-color);
+        color: rgba(22, 24, 35, 0.8);
     }
 
     &::after {
@@ -107,3 +107,7 @@
         background-color: rgba(22, 24, 35, 0.06);
     }
 }
+
+// .custom-login {
+//     color: black;
+// }
