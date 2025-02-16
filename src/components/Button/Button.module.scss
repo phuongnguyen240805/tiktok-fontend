@@ -12,9 +12,9 @@ $background-default: #ffffff !default;
     font-size: 1.6rem;
     font-weight: 700;
     border-radius: 4px;
-    cursor: pointer;
     background-color: $background-default;
     border: 1px solid transparent;
+    cursor: pointer;
     transition: all .2s;
 
     +.wrapper {
@@ -30,6 +30,12 @@ $background-default: #ffffff !default;
 .icon+.title,
 .title+.icon {
     margin-left: 6px;
+}
+
+.icon {
+    width: 20px;
+    display: inline-block;
+    text-align: center;
 }
 
 // button types

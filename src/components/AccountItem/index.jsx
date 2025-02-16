@@ -6,20 +6,29 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(styles)
 
-function AccountItem({ linkImage }) {
+function AccountItem({
+    linkImage,
+    alt,
+    name,
+    username,
+    icon = false
+}) {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('avatar')}>
                 <img className={cx('avatar-img')}
                     src={linkImage}
-                    alt="Thi" />
+                    alt={alt} />
             </div>
             <div className={cx('info')}>
                 <h4 className={cx('name')}>
-                    <span>Nguyen Thi Anh Thu</span>
-                    <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                    <span>{name}</span>
+                    {
+                        icon &&
+                        <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                    }
                 </h4>
-                <span className={cx('username')}>thunguyen</span>
+                <span className={cx('username')}>{username}</span>
             </div>
         </div>
     )
