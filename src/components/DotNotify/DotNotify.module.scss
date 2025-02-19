@@ -1,0 +1,27 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Icon
+.box-notify {
+    position: relative;
+    @extend .center;
+
+    .notify {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 5px;
+        min-width: 22px;
+        height: 16px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: var(--white);
+        background-color: var(--primary);
+        border-radius: 999px;
+
+        @extend .center;
+    }
+}

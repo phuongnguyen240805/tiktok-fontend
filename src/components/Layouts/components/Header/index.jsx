@@ -2,13 +2,11 @@ import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCallback, useEffect, useState } from 'react';
 import {
-    faCircleQuestion, faCircleXmark, faCloudUpload, faCoins, faEarthAsia,
+    faCircleQuestion, faCircleXmark, faCoins, faEarthAsia,
     faEllipsisVertical, faGear, faKeyboard, faMagnifyingGlass, faSignOut, faSpinner,
     faUser
 } from '@fortawesome/free-solid-svg-icons';
-import Tippy from '@tippyjs/react';
 import HeadlessTippy from '@tippyjs/react/headless';
-import 'tippy.js/dist/tippy.css';
 
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import styles from './Header.module.scss';
@@ -16,6 +14,10 @@ import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import Tooltip from '~/components/ToolTip';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
+import DotNotify from '~/components/DotNotify';
 
 const cx = classNames.bind(styles);
 
@@ -52,6 +54,7 @@ const MENU_ITEMS = [
 ]
 
 function Header() {
+
     const [searchResult, setSearchResult] = useState([])
 
     // current user login
@@ -152,14 +155,31 @@ function Header() {
                         currentUser ?
                             (
                                 <>
-                                
-                                    <Tippy
+
+                                    <Tooltip
                                         content='Upload video'
-                                        placement='bottom'
-                                        delay={[0, 200]}
+                                        offset={[0, 8]}
                                     >
-                                        <Button className={cx('action-btn')}><FontAwesomeIcon icon={faCloudUpload} /></Button>
-                                    </Tippy>
+                                        <Button className={cx('action-btn')}><UploadIcon /></Button>
+                                    </Tooltip>
+
+                                    <Tooltip
+                                        content='Message'
+                                        offset={[0, 8]}
+                                    >
+                                        <Button className={cx('action-btn')}><MessageIcon width='2.4rem' height='2.4rem' /></Button>
+                                    </Tooltip>
+
+                                    <DotNotify
+                                        num='15'
+                                    >
+                                        <Tooltip
+                                            content='Inbox'
+                                            offset={[0, 8]}
+                                        >
+                                            <Button className={cx('action-btn')}><InboxIcon /></Button>
+                                        </Tooltip>
+                                    </DotNotify>
                                 </>
                             ) : (
                                 <>
@@ -180,7 +200,11 @@ function Header() {
                         {
                             currentUser ? (
                                 <div className={cx('user-avatar')}>
-                                    <img src="https://topdanangcity.com/wp-content/uploads/2024/09/anh-avatar-dep-0Tq3Qs0.jpg" alt="Nguyen Xuan Phuong" className={cx('user-avatar__img')} />
+                                    <Image src="https://topdanangcity.com/wp-content/uploads/2024/09/anh-avatar-dep-0Tq3Qs0.jpg"
+                                        alt="Nguyen Xuan Phuong"
+                                        className={cx('user-avatar__img')}
+                                    // fallback='https://topdanangcity.com/wp-content/uploads/2024/09/anh-avatar-dep-0Tq3Qs0.jpg'
+                                    />
                                 </div>
                             ) : (
                                 <button className={cx('more-btn')}>
