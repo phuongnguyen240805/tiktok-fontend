@@ -1,13 +1,15 @@
-import { SubLayout } from "~/components/Layouts"
+import { SubLayout } from "~/layouts"
 import { HomePage, FollowingPage, ProfilePage, SearchPage, UploadPage } from "~/page"
+
+import config from "~/config"
 
 // public routes
 const publicRoutes = [
-    { path: '/', component: HomePage },
-    { path: '/following', component: FollowingPage },
-    { path: '/:nickname', component: ProfilePage },
-    { path: '/search', component: SearchPage, layout: null },
-    { path: '/upload', component: UploadPage, layout: SubLayout },
+    { path: config.routes.home, component: HomePage },
+    { path: config.routes.following, component: FollowingPage },
+    { path: config.routes.profile, component: ProfilePage },
+    { path: config.routes.search, component: SearchPage, layout: null },
+    { path: config.routes.upload, component: UploadPage, layout: SubLayout },
 ]
 
 

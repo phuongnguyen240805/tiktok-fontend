@@ -5,6 +5,7 @@ import {
     faEllipsisVertical, faGear, faKeyboard, faSignOut,
     faUser
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router';
 
 import styles from './Header.module.scss';
 import images from '~/assets/images';
@@ -15,6 +16,7 @@ import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import DotNotify from '~/components/DotNotify';
 import Search from '../Search';
+import config from "~/config"
 
 const cx = classNames.bind(styles);
 
@@ -64,7 +66,7 @@ function Header() {
         {
             icon: <FontAwesomeIcon icon={faUser} />,
             title: 'View profile',
-            to: '/@phuong'
+            to: config.routes.profile
         },
         {
             icon: <FontAwesomeIcon icon={faCoins} />,
@@ -88,9 +90,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={config.routes.home} className={cx('logo')}>
                     <img src={images.logo} alt="Tiktok" />
-                </div>
+                </Link>
 
                 {/* Search */}
                 <span>

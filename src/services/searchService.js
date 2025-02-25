@@ -1,14 +1,14 @@
 import * as request from '~/utils/request';
 
-const search = async (value) => {
+const search = async (q, type = 'less') => {
 
     const userSearchApi = 'users/search'
 
     try {
         const searchData = await request.get(userSearchApi, {
             params: {
-                q: value,
-                type: 'less'
+                q,
+                type
             }
         })
 
