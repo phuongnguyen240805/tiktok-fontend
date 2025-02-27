@@ -1,6 +1,7 @@
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import classNames from "classnames/bind";
+import PropTypes from 'prop-types';
 
 import styles from './ToolTip.module.scss'
 
@@ -31,6 +32,12 @@ function Tooltip(
             {children}
         </Tippy>
     );
+}
+
+Tooltip.propTypes = {
+    children: PropTypes.node.isRequired,
+    placement: PropTypes.string,
+    // notify: PropTypes.,
 }
 
 export default Tooltip;

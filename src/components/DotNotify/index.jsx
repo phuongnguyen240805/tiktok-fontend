@@ -1,4 +1,5 @@
 import classNames from "classnames/bind";
+import PropTypes from 'prop-types';
 
 import styles from './DotNotify.module.scss'
 
@@ -16,6 +17,11 @@ function DotNotify({ children, num = 1 }) {
             <span className={cx('notify')}>{notify}</span>
         </div>
     );
+}
+
+DotNotify.propTypes = {
+    children: PropTypes.node.isRequired,
+    num: PropTypes.number
 }
 
 export default DotNotify;

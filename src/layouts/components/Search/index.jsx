@@ -47,16 +47,16 @@ function Search() {
     }, [debounced])
 
     // clear input and focus
-    const handleClear = useCallback(() => {
+    const handleClear = () => {
         setSearchValue('')
 
         inputRef.current.focus()
-    }, [])
+    }
 
     // handle hide result when out click
-    const handleHideResult = () => {
+    const handleHideResult = useCallback(() => {
         setShowResult(false)
-    }
+    }, [])
 
     // handle enter input empty
     // const handleChange = (e) => {
@@ -69,7 +69,7 @@ function Search() {
 
     return (
         // Using a wrapper <div> or <span> tag to avoid warning
-        <div> 
+        <div>
             <HeadlessTippy
                 interactive={true}
                 visible={showResult && searchResult.length > 0}
@@ -101,7 +101,7 @@ function Search() {
                         onChange={e => setSearchValue(e.target.value.trimStart())} // ko nhap dau cach dau tien
                         onFocus={() => setShowResult(true)}
                     />
-    
+
                     {!!searchValue && !loading && (
                         <button className={cx('clear')} onClick={handleClear}>
                             <FontAwesomeIcon icon={faCircleXmark} />
@@ -111,7 +111,7 @@ function Search() {
                         loading &&
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                     }
-    
+
                     <button className={cx('search-btn')} onMouseDown={e => e.preventDefault()}>
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </button>
