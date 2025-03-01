@@ -39,6 +39,15 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
         })
     }
 
+    const handleBack = () => {
+        setHistory(prev => prev.slice(0, history.length - 1))
+    }
+
+    // reset to first page when hire
+    const handleReset = () => {
+        setHistory(prevHistory => prevHistory.slice(0, 1))
+    }
+
     return (
         <Tippy
             // visible
@@ -53,9 +62,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                             history.length > 1 &&
                             <Header
                                 title={current?.title}
-                                onBack={() => {
-                                    setHistory(prev => prev.slice(0, history.length - 1))
-                                }}
+                                onBack={handleBack}
                             />
                         }
                         <div className={cx('menu-scrollable')}>{renderItems()}</div>
@@ -63,7 +70,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                 </div>
             )}
             hideOnClick={hideOnClick} // hide when click
-            onHide={() => setHistory(prevHistory => prevHistory.slice(0, 1))} // set về trang đầu khi ẩn
+            onHide={handleReset} // set về trang đầu khi ẩn
         >
             {children}
         </Tippy>

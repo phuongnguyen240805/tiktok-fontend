@@ -37,7 +37,6 @@ function Tooltip(
 Tooltip.propTypes = {
     children: PropTypes.node.isRequired,
     placement: PropTypes.string,
-    // notify: PropTypes.,
 }
 
 export default Tooltip;

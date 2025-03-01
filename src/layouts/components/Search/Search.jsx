@@ -20,16 +20,16 @@ function Search() {
 
     const [searchValue, setSearchValue] = useState('') // two way binding (input search)
     const [searchResult, setSearchResult] = useState([]) // search result
-    const [showResult, setShowResult] = useState(true) // show result search
+    const [showResult, setShowResult] = useState(false) // show result search
     const [loading, setLoading] = useState(false) // show status load
 
-    const debounced = useDebounce(searchValue, 500) // delay action 
+    const debouncedValue = useDebounce(searchValue, 500) // delay action 
 
     const inputRef = useRef()
 
     // handle fetch api search result
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([])
             return;
         }
@@ -37,14 +37,14 @@ function Search() {
         const searchApi = async () => {
             setLoading(true)
 
-            const result = await searchServices.search(debounced)
+            const result = await searchServices.search(debouncedValue)
             setSearchResult(result)
 
             setLoading(false)
         }
 
         searchApi()
-    }, [debounced])
+    }, [debouncedValue])
 
     // clear input and focus
     const handleClear = () => {
