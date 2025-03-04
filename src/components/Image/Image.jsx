@@ -22,14 +22,14 @@ const Image = forwardRef((
 
     return (
         // eslint-disable-next-line jsx-a11y/alt-text
-        <img
-            ref={ref}
-            className={classNames(styles.wrapper, className)}
-            src={fallback || src} 
-            alt={alt}
-            {...props}
-            onError={handleError}
-        />
+            <img
+                ref={ref}
+                className={classNames(styles.wrapper, className)}
+                src={fallback || src} 
+                alt={alt}
+                {...props}
+                onError={handleError}
+            />
     );
 })
 
