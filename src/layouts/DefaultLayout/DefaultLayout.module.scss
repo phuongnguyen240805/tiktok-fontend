@@ -13,5 +13,12 @@
 }
 
 .content {
+    overflow-y: auto;
+    height: calc(100vh - var(--default-layout-header-height));
     flex: 1;
+}
+
+// scrollbar css
+.content::-webkit-scrollbar {
+    width: 0px;
 }

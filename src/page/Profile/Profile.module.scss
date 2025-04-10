@@ -1,0 +1,96 @@
+.wrapper {
+    display: flex;
+    padding: 32px 24px 36px;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: calc(1px + 100vh);
+    margin: 0px auto;
+    box-sizing: content-box;
+}
+
+.info-profile {
+    max-width: 100%;
+    min-height: 140px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    -webkit-box-align: center;
+}
+
+.avatar {
+    width: 151px;
+    height: 151px;
+    margin-left: 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+
+    .avatar-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.info-user {
+    flex: 1;
+    padding-left: 28px;
+}
+
+.name {
+    font-family: sans-serif;
+
+    .nickname {
+        font-size: 2.2rem;
+        font-weight: 700;
+    }
+
+    .fullname {
+        padding-left: 12px;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+
+    .btn-advertise {
+        text-decoration: unset;
+    }
+
+    .btn-setting,
+    .btn-share {
+        min-width: unset;
+        padding: 10px;
+        margin-left: 10px;
+        font-size: 1.9rem;
+    }
+}
+
+.share-icon {
+    width: 19px;
+    height: 19px;
+}
+
+.interact {
+    font-size: 1.6rem;
+
+    .btn-interact {
+        padding-left: unset;
+        font-weight: 500;
+    }
+
+    .bio {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: rgba(22, 24, 35, 0.9);
+        line-height: 21px;
+        white-space: pre-line;
+    }
+}

@@ -11,13 +11,13 @@ import AccountPreview from './AccountPreview';
 
 const cx = classNames.bind(styles)
 
-function AccountItem() {
+function AccountItem({ data }) {
 
     const renderPreview = (attrs) => {
         return (
             <div className={cx('preview')} tabIndex="-1" {...attrs}>
                 <InfoWrapper>
-                    <AccountPreview />
+                    <AccountPreview data={data}/>
                 </InfoWrapper>
             </div>
         )
@@ -37,15 +37,16 @@ function AccountItem() {
                 <div className={cx('account-item')}>
                     <div className={cx('avatar')}>
                         <Image className={cx('avatar-img')}
-                            src='laksdf'
-                            alt='' />
+                            src={data.avatar}
+                            alt={data.full_name} />
                     </div>
                     <div className={cx('item-info')}>
                         <p className={cx('username')}>
-                            <strong>phuongnguyen</strong>
-                            <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                            <strong>{data.nickname}</strong>
+                            {data.tick &&
+                                <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />}
                         </p>
-                        <p className={cx('name')}>Nguyen Xuan Phuong</p>
+                        <p className={cx('name')}>{data.full_name}</p>
                     </div>
                 </div>
             </Tippy>
@@ -54,7 +55,7 @@ function AccountItem() {
 }
 
 AccountItem.propTypes = {
-
+    data: PropTypes.node.isRequired
 }
 
 export default AccountItem;

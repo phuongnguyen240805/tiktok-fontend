@@ -11,11 +11,12 @@ import {
     UserGroupActiveIcon,
     LiveActiveIcon
 } from "~/components/Icons";
-import SuggestedAccounts from "~/components/SuggestedAccounts";
+import SidebarAccount from "./SidebarAccount";
 
 const cx = classNames.bind(styles)
 
 function Sidebar() {
+
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -29,7 +30,7 @@ function Sidebar() {
                     title="Following"
                     to={config.routes.following}
                     icon={<UserGroupIcon className={cx('group-icon')} />}
-                    activeIcon={<UserGroupActiveIcon className={cx('group-icon')}/>}
+                    activeIcon={<UserGroupActiveIcon className={cx('group-icon')} />}
                 />
                 <MenuItem
                     title="LIVE"
@@ -39,8 +40,7 @@ function Sidebar() {
                 />
             </Menu>
 
-            <SuggestedAccounts label='Suggested accounts'/>
-            <SuggestedAccounts label='Followed accounts'/>
+            <SidebarAccount />
         </aside>
     )
 }

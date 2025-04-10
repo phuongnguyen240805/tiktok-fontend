@@ -11,29 +11,31 @@ import config from "~/config";
 
 const cx = classNames.bind(styles)
 
-function AccountPreview() {
+function AccountPreview({ data }) {
+
     return (
         <div className={cx('wrapper')}>
             <header className={cx('header')}>
                 <Link to={config.routes.profile}>
                     <Image
                         className={cx('avatar')}
-                        src='laksdf'
-                        alt='lkasdf'
+                        src={data.avatar}
+                        alt={data.full_name}
                     />
                 </Link>
                 <Button className={cx('follow-btn')} primary>Follow</Button>
             </header>
             <div className={cx('body')}>
                 <p className={cx('username')}>
-                    <strong>phuongnguyen</strong>
-                    <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                    <strong>{data.nickname}</strong>
+                    {data.tick &&
+                        <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />}
                 </p>
-                <p className={cx('name')}>Nguyen Xuan Phuong</p>
+                <p className={cx('name')}>{data.full_name}</p>
                 <p className={cx('analytics')}>
-                    <strong className={cx('value')}>8.2M </strong>
+                    <strong className={cx('value')}>{data.followers_count} </strong>
                     <span className={cx('label')}>Follower</span>
-                    <strong className={cx('value')}>8.2M </strong>
+                    <strong className={cx('value')}>{data.likes_count} </strong>
                     <span className={cx('label')}>Likes</span>
                 </p>
             </div>
@@ -42,7 +44,7 @@ function AccountPreview() {
 }
 
 AccountPreview.propTypes = {
-
+    data: PropTypes.node.isRequired
 }
 
 export default AccountPreview;

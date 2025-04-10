@@ -34,6 +34,11 @@ $color-default: #3b3b3b !default;
         // có mức độ ưu tiên hơn
         @extend .disabledEvent;
     }
+
+    &.disabledText {
+        user-select: none;
+        pointer-events: none;
+    }
 }
 
 .icon+.title,

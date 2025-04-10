@@ -1,6 +1,18 @@
 .wrapper {
+    height: calc(100vh - var(--default-layout-header-height));
     width: 356px;
-    padding: 20px 0 26px 0px;
+    padding: 20px 0 17px 0px;
+    transition: all 0.3s;
+
+    &:hover {
+        overflow-y: auto;
+    }
+}
+
+// scrollbar css
+.wrapper::-webkit-scrollbar {
+    border-radius: 0;
+    width: 5px;
 }
 
 .group-icon {

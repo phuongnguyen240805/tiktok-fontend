@@ -14,6 +14,7 @@ function Button({
     outline = false,
     text = false,
     disabled = false,
+    disabledText = false,
     rounded = false,
     // button size
     small = false,
@@ -57,6 +58,7 @@ function Button({
         outline,
         text,
         disabled,
+        disabledText,
         rounded,
         small,
         large
