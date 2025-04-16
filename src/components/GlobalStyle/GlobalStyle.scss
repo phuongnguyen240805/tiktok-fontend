@@ -40,7 +40,8 @@ body {
 // scrollbar css
 html *::-webkit-scrollbar {
     border-radius: 0;
-    width: 8px;
+    width: 0;
+    // width: 8px;
 }
 
 html *::-webkit-scrollbar-thumb {

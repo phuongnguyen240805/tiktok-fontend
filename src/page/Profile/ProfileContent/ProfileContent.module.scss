@@ -1,0 +1,42 @@
+.displayCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-icon {
+    height: 92px;
+    width: 92px;
+    margin: 0 auto;
+    background-color: rgba(45, 45, 45, 1);
+    color: rgba(246, 246, 246, 1);
+    border-radius: 50%;
+}
+
+.empty-icon,
+.empty-title,
+.empty-subtitle {
+
+    @extend .displayCenter;
+}
+
+.icon-empty {
+    height: 44px;
+    width: 44px;
+}
+
+.empty-title {
+    font-size: 2.4rem;
+    line-height: 30px;
+    font-weight: 700;
+    color: rgba(16, 16, 16, 0.9);
+    margin-top: 24px;
+}
+
+.empty-subtitle {
+    font-size: 1.6rem;
+    line-height: 21px;
+    font-weight: 500;
+    color: rgba(28, 28, 28, 0.75);
+    margin-top: 8px;
+}

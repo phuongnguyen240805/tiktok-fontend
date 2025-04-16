@@ -6,12 +6,13 @@ import PropTypes from 'prop-types';
 
 import styles from './AccountItem.module.scss'
 import Image from "../Image";
+import config from "~/config";
 
 const cx = classNames.bind(styles)
 
 function AccountItem({ data }) {
     return (
-        <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
+        <Link to={config.routes.profile} className={cx('wrapper')}>
             <div className={cx('avatar')}>
                 <Image className={cx('avatar-img')} 
                     src={data.avatar}

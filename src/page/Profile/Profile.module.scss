@@ -1,11 +1,15 @@
+.displayCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .wrapper {
     display: flex;
     padding: 32px 24px 36px;
     flex-direction: column;
     flex: 1 1 auto;
-    min-height: calc(1px + 100vh);
     margin: 0px auto;
-    box-sizing: content-box;
 }
 
 .info-profile {
@@ -93,4 +97,110 @@
         line-height: 21px;
         white-space: pre-line;
     }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.options-navbar {
+
+    @extend .displayCenter;
+
+    .active {
+        color: var(--black);
+        opacity: 1;
+    }
+}
+
+
+.btn-option {
+    height: 40px;
+    padding: 0 11px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    opacity: .6;
+
+    @extend .displayCenter;
+
+    &:hover {
+        text-decoration: unset;
+    }
+
+    +.btn-option {
+        margin-left: unset;
+    }
+}
+
+.sub-options {
+    margin: 2px 0 8px;
+
+    @extend .displayCenter;
+
+    .btn-sub__option {
+        min-width: unset;
+        height: 32px;
+        padding: 6px 10px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        opacity: .6;
+        transition: unset;
+    }
+
+    .active {
+        color: var(--white);
+        background-color: rgb(70, 70, 70);
+        background-blend-mode: normal;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+        opacity: 1;
+    }
+
+    .status {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: var(--black);
+        opacity: 1;
+
+        .icon {
+            width: 15px;
+            height: 15px;
+            margin-left: 4px;
+            margin-right: unset;
+        }
+    }
+}
+
+.btn-sub__option {
+    @extend .displayCenter;
+
+    &:hover {
+        text-decoration: unset;
+    }
+
+    +.btn-sub__option {
+        margin-left: unset;
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+
+    @extend .displayCenter;
+}
+
+// main content of profile
+.content {
+    flex: 0 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 440px;
+    -webkit-box-align: center;
+    margin: 0px auto;
+
+    @extend .displayCenter;
 }

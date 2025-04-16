@@ -22,7 +22,7 @@ function Sidebar() {
             <Menu>
                 <MenuItem
                     title="For You"
-                    to={config.routes.profile}
+                    to={config.routes.home}
                     icon={<HomeIcon />}
                     activeIcon={<HomeActiveIcon />}
                 />
